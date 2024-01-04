@@ -24,3 +24,9 @@ convention = "google"
 
 [tool.codespell]
 skip = "*.pdf,*.ipynb,*.drawio,*.json"
+
+[tool.ruff]
+    select = ["I"]
+  
+toml
+    line-length=120
