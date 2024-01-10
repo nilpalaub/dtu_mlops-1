@@ -1,0 +1,88 @@
+{
+    "os": "Linux-6.2.0-39-generic-x86_64-with-glibc2.35",
+    "python": "3.11.7",
+    "heartbeatAt": "2024-01-08T15:34:41.450423",
+    "startedAt": "2024-01-08T15:34:40.492202",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/nil/Desktop/mlops/dtu_mlops/s4_debugging_and_logging/exercise_files/wandb_tester.py",
+    "codePathLocal": "wandb_tester.py",
+    "codePath": "s4_debugging_and_logging/exercise_files/wandb_tester.py",
+    "git": {
+        "remote": "https://github.com/nilpalaub/dtu_mlops-1.git",
+        "commit": "3f60f1bf467b039c7d955f28072b539394d81983"
+    },
+    "email": "nilpalaub@gmail.com",
+    "root": "/home/nil/Desktop/mlops/dtu_mlops",
+    "host": "nil-VivoBook-ASUSLaptop-X512FJ-X512FJ",
+    "username": "nil",
+    "executable": "/home/nil/anaconda3/envs/mlops/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 3126.8352499999996,
+        "min": 400.0,
+        "max": 3900.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2999.215,
+            "min": 400.0,
+            "max": 3900.0
+        },
+        {
+            "current": 2893.57,
+            "min": 400.0,
+            "max": 3900.0
+        },
+        {
+            "current": 2903.162,
+            "min": 400.0,
+            "max": 3900.0
+        },
+        {
+            "current": 2888.056,
+            "min": 400.0,
+            "max": 3900.0
+        },
+        {
+            "current": 2894.922,
+            "min": 400.0,
+            "max": 3900.0
+        },
+        {
+            "current": 3122.527,
+            "min": 400.0,
+            "max": 3900.0
+        },
+        {
+            "current": 2892.282,
+            "min": 400.0,
+            "max": 3900.0
+        },
+        {
+            "current": 2888.054,
+            "min": 400.0,
+            "max": 3900.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 88.04572296142578,
+            "used": 69.57086181640625
+        }
+    },
+    "gpu": "NVIDIA GeForce MX230",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce MX230",
+            "memory_total": 2147483648
+        }
+    ],
+    "memory": {
+        "total": 7.601047515869141
+    }
+}

@@ -12,7 +12,7 @@ class Network(nn.Module):
 
     """
 
-    def __init__(self, input_size, output_size, hidden_layers, drop_p=0.5):
+    def __init__(self, input_size: int, output_size: int, hidden_layers: int, drop_p: float=0.5):
         super().__init__()
         # Input to a hidden layer
         self.hidden_layers = nn.ModuleList([nn.Linear(input_size, hidden_layers[0])])
@@ -25,7 +25,7 @@ class Network(nn.Module):
 
         self.dropout = nn.Dropout(p=drop_p)
 
-    def forward(self, x):
+    def forward(self, x: torch.Tensor):
         """Forward pass through the network, returns the output logits."""
         for each in self.hidden_layers:
             x = nn.functional.relu(each(x))
