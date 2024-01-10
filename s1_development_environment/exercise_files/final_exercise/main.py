@@ -62,7 +62,7 @@ def evaluate(model_checkpoint):
     print(model_checkpoint)
 
 
-    model = torch.load("/home/nil/Desktop/mlops/dtu_mlops/s1_development_environment/exercise_files/final_exercise/model.pt")
+    model = torch.load(model_checkpoint)
     _, test_set = mnist()
 
     model.eval()

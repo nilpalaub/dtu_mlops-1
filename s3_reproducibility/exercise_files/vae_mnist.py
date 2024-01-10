@@ -3,7 +3,7 @@
 A simple implementation of Gaussian MLP Encoder and Decoder trained on MNIST
 """
 import os
-
+from hydra import compose, initialize
 import torch
 import torch.nn as nn
 import torchvision.transforms as transforms
@@ -14,16 +14,26 @@ from torchvision.datasets import MNIST
 from torchvision.utils import save_image
 
 # Model Hyperparameters
+initialize(config_path=".", job_name="vae_mnist")
+config = compose(config_name="config.yaml")
+
+dataset_path = config.hyperparameters.dataset_path
+batch_size = config.hyperparameters.batch_size
+x_dim = config.hyperparameters.x_dim
+hidden_dim = config.hyperparameters.hidden_dim
+latent_dim = config.hyperparameters.latent_dim
+lr = config.hyperparameters.lr
+epochs = config.hyperparameters.epochs
+cuda = config.hyperparameters.cuda
+random_seed = config.hyperparameters.random_seed
+
+# For reproducibility
+torch.manual_seed(random_seed)
+torch.backends.cudnn.deterministic = True
+
 dataset_path = "~/datasets"
 cuda = True
 DEVICE = torch.device("cuda" if cuda else "cpu")
-batch_size = 100
-x_dim = 784
-hidden_dim = 400
-latent_dim = 20
-lr = 1e-3
-epochs = 20
-
 
 # Data loading
 mnist_transform = transforms.Compose([transforms.ToTensor()])
@@ -37,7 +47,7 @@ test_loader = DataLoader(dataset=test_dataset, batch_size=batch_size, shuffle=Fa
 encoder = Encoder(input_dim=x_dim, hidden_dim=hidden_dim, latent_dim=latent_dim)
 decoder = Decoder(latent_dim=latent_dim, hidden_dim=hidden_dim, output_dim=x_dim)
 
-model = Model(Encoder=encoder, Decoder=decoder).to(DEVICE)
+model = Model(encoder=encoder, decoder=decoder).to(DEVICE)
 
 
 def loss_function(x, x_hat, mean, log_var):

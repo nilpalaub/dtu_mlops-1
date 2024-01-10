@@ -7,9 +7,7 @@ class MyAwesomeModel(nn.Module):
     def __init__(self):
         super().__init__()
         self.model = nn.Sequential(
-            nn.Linear(784, 256), # [B, ]
-            nn.ReLU(),
-            nn.Linear(256, 128),
+            nn.Linear(784, 128), # [B, ]
             nn.ReLU(),
             nn.Linear(128, 10)
         ) 
